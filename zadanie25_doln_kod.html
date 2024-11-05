@@ -1,0 +1,57 @@
+<textarea cols="70" rows="30">
+
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Z25</title>
+        <style>
+          
+          #output {
+              font-size: 54px;  
+              color: blue;      
+          }
+      </style>
+        
+        <script>
+            // Prompty
+            var N0 = parseFloat(prompt("Podaj N0 (liczba początkowa atomów):"));
+            var t = parseFloat(prompt("Podaj czas (w latach):"));
+            var T12 = parseFloat(prompt("Podaj czas połowicznego rozpadu T1/2 (w latach):"));
+            
+           
+            function zadanie25() {
+                // Oblicznie wartości
+                const lambda = (Math.LN2 / T12).toFixed(7);
+                const N = (N0 * Math.pow(Math.E, -lambda * t)).toFixed(7);
+    
+                // Wyświetla wyniki
+                document.getElementById("output").innerHTML = `
+                    N0 = ${N0} [sztuk]<br> 
+                    t = ${t} [lat]<br> 
+                    T1/2 = ${T12} [lat]<br> 
+                    Lambda = ${lambda} [1/lat]<br> 
+                    N = ${N} [sztuk]<br>
+                `;
+            }
+            
+            // Wywołanie funkcji przy ładowaniu strony
+            window.onload = zadanie25;
+        </script>
+    </head>
+    <body>
+       
+        <div id="output"></div>
+    </body>
+    </html>
+    
+    
+</textarea>
+
+
+
+
+
+
+

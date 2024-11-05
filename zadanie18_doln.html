@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Użycie fukcji </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+ <div style="color:navy;font-size:50px;">
+ <script language="JavaScript">
+
+
+ var a=parseFloat(prompt("a=",""));
+ var b=parseFloat(prompt("b=",""));
+
+ function suma_dol(a, b) 
+{
+ return a + b;
+ }
+ function odejmowanie_dol(a,b)
+ {
+ return a - b;
+ }
+ function mnozenie_dol(a,b)
+ {
+ return a * b;
+ }
+ function od_kwadratu_dol1(a,b)
+ {
+ return Math.pow(a,2)
+ }
+ function od_kwadratu_dol2(a,b)
+ {
+ return Math.pow(b,2)
+ }
+ function reszta_z_dzielenia_a_przez_b_dol(a,b)
+ {
+ return a % b;
+ }
+
+
+ document.write("suma="+suma_dol(a,b)+"<br>");
+ document.write("różnica="+odejmowanie_dol(a,b)+"<br>");
+ document.write("iloczyn="+mnozenie_dol(a,b)+"<br>");
+ document.write("kwadrat="+od_kwadratu_dol1(a,b)+"<br>");
+ document.write("2kwadrat="+od_kwadratu_dol2(a,b)+"<br>");
+ document.write("reszta z dzielenia="+reszta_z_dzielenia_a_przez_b_dol(a,b)+"<br>");
+
+
+</script>
+</div>
+</body>
+</html>

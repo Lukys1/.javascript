@@ -1,0 +1,69 @@
+<textarea cols="70" rows="30">
+    <html> 
+        <head> 
+        <title>
+         Przykład obliczenia V i Pc walca
+        </title>
+         <script language="JavaScript">
+            
+        
+           
+           
+          
+        
+            
+        
+            function Drabina_dolny(x,d) {
+                x_dol=parseFloat(x)
+                d_dol=parseFloat(d)
+             drabina_dol = Math.sqrt((x_dol*x_dol)+(d_dol*d_dol));
+            document.getElementsByName('drabina')[0].value=drabina_dol.toFixed(2);
+            
+              
+            }
+        
+            function Alfa_dolny(x,d) {
+                x_dol=parseFloat(x)
+                d_dol=parseFloat(d)
+                alfa_dol = Math.atan(x_dol/d_dol)*(180/Math.PI);
+                document.getElementsByName('alfa')[0].value=alfa_dol.toFixed(2);
+               
+                
+        
+                
+            }
+        
+        
+            
+        </script>
+        </head>
+        
+        
+        <body>
+        <form name="formularz" action="..." onsubmit="Drabina_dolny(this.x_dol.value,this.d_dol.value); 
+        Alfa_dolny(this.x_dol.value,this.d_dol.value);return false"> 
+         Podaj x=
+         <input size="6" name="x_dol">
+         Podaj d=
+         <input size="6" name="d_dol">
+         <br> <br>
+         <input TYPE="submit" Value="oblicz" onclick="Drabina_dolny">
+         <br> <br>
+         Drabina=
+         <input size="6" name="drabina" onclick="Alfa_dolny">
+         Alfa=
+         <input size="6" name="alfa" >
+        </form>
+        
+        </body>
+        
+        
+        </html>
+</textarea>
+
+
+
+
+
+
+

@@ -1,0 +1,345 @@
+var a=parseFloat(m_dol);
+var b;
+
+
+b=a*2;
+
+var suma1 = (a_dol + b_dol);
+var suma2 = suma1 * suma1;
+var suma3 = suma2 * suma1;
+
+var aPodaj_dol=prompt("Podaj pierwszą liczbę    A=","");
+var bPodaj_dol=prompt("Podaj pierwszą liczbę    B=","");
+        var a_dol=parseInt(aPodaj_dol);
+        var b_dol=parseInt(bPodaj_dol);
+        var suma1 = 3*Math.pow(a_dol, b_dol)*b_dol;
+        var suma2 = 3*a_dol*Math.pow(b_dol, b_dol);
+        var suma3 = Math.pow(b_dol, 3);
+        var sumAll = a + suma1 + suma2 + suma3;
+
+
+
+
+
+
+
+
+
+document.write("("+a_dol+" + "+b_dol+")^3 + 3*(("+a_dol+")^"+b_dol+")*("+b_dol+") + 3*("+a_dol+"*("+b_dol+")^"+b_dol+") + "+b_dol+"^3 = "+a_dol+" + "+suma1+" + "+suma2+" +"+suma3+" = "+sumAll+" <br>");
+
+
+
+var suma1 = 3*Math.pow(a, b)*b;
+var suma2 = 3*a*Math.pow(b, b);
+var suma3 = Math.pow(b, 3);
+var sumAll = a + suma1 + suma2 + suma3;
+
+
+<!DOCTYPE html>
+ <head>
+ <meta charset="utf-8">
+ </head>
+ 
+ 
+<body>
+    <div style="color:#00008b;font-size:43px">
+    <script language="JavaScript">
+        var a=prompt("Podaj pierwszą liczbę                                 A=                                      Podaj drugą liczbę                                      B=","");
+        var b=prompt("Podaj pierwszą liczbę                                 A=                                      Podaj drugą liczbę                                      B=","");
+        var tszya;
+        var tszyb;
+        tszya=a*a*a;
+        dwaa=a*a;
+        tszyb=b*b*b;
+        dwab=b*b;
+        suma=tszya+3*dwaa*b+3*a*dwab+tszyb;
+        document.write("("+a+"+"+b+")^3="+a+"^3+3*(("+a+")^2)+3*("+a+")*(("+b+")^2)+"+b+"^3="+tszya+"+"+3*dwaa*b+"+"+3*a*dwab+"+"+tszyb+"="+suma);
+        //a^3   +  3*a^2*b  +  3*a*b^2 + b^3
+    </script>
+    <br> 
+    </div>   
+    <input type="button" name="zamknij" value="nic" onclick="window.close()">
+
+
+var xa_dol = parseFloat(prompt("Podaj xa"));
+var ya_dol = parseFloat(prompt("Podaj ya"));
+var xb_dol = parseFloat(prompt("Podaj xb"));
+var yb_dol = parseFloat(prompt("Podaj yb"));
+var xc_dol = parseFloat(prompt("Podaj xc"));
+var yc_dol = parseFloat(prompt("Podaj yc"));
+
+Podaj długość boku xa: <input type="text" id="xa_dol" value=""> <br><br><br>
+Podaj długość boku ya: <input type="text" id="ya_dol" value=""> <br><br><br>
+Podaj długość boku xb: <input type="text" id="xb_dol" value=""> <br><br><br>
+Podaj długość boku yb: <input type="text" id="yb_dol" value=""> <br><br><br>
+Podaj długość boku xc: <input type="text" id="xc_dol" value=""> <br><br><br>
+Podaj długość boku yc: <input type="text" id="yc_dol" value=""> <br><br><br>
+
+
+
+
+
+CAŁE 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    var xa_war = parseFloat(prompt("Podaj xa"))
+    var ya_war = parseFloat(prompt("Podaj ya"))
+    var xb_war = parseFloat(prompt("Podaj xb"))
+    var yb_war = parseFloat(prompt("Podaj yb"))
+    var xc_war = parseFloat(prompt("Podaj xc"))
+    var yc_war = parseFloat(prompt("Podaj yc"))
+    document.getElementById("result").innerHTML = `AB=${AB_war().toFixed(2)} BC=${BC_war().toFixed(2)} AC=${AC_war().toFixed(2)}`;
+
+    function AB_war() {
+        return Math.sqrt(Math.pow(xb_war-xa_war, 2) + Math.pow(yb_war-ya_war,2));
+    }
+
+    function BC_war() {
+        return Math.sqrt(Math.pow(xc_war-xb_war, 2) + Math.pow(yc_war-yb_war,2));
+    }
+
+    function AC_war() {
+        return Math.sqrt(Math.pow(xc_war-xa_war, 2)+ Math.pow(yc_war-ya_war,2));
+    }
+
+    console.log(AB_war());
+</script>
+</html>
+
+
+
+<html>
+<head>
+ <meta charset="UTF-8">
+ <link rel="stylesheet">
+</head>
+<body>
+
+    <input type="text" id="xa_dol"placeholder="xa_dol">
+    <input type="text" id="ya_dol"placeholder="ya_dol">
+    <input type="text" id="xb_dol"placeholder="xb_dol">
+    <input type="text" id="yb_dol"placeholder="yb_dol">
+    <input type="text" id="xc_dol"placeholder="xc_dol">
+    <input type="text" id="yc_dol"placeholder="yc_dol">
+  
+
+<br>
+<button onclick="AB_dol()">Oblicz AB</button>
+<button onclick="BC_dol()">Oblicz BC</button>
+<button onclick="AC_dol()">Oblicz AC</button>
+<br>
+<div id="nazwa"></div>
+<script type="text/javascript">
+  
+
+function AB_dol(){
+    var xa=parseFloat(document.getElementById("xa").value);
+    var xb=parseFloat(document.getElementById("xb").value);
+    var ya=parseFloat(document.getElementById("ya").value);
+    var yb=parseFloat(document.getElementById("yb").value);
+
+var AB= math.sqrt(math.pow(xa_dol - xb_dol,2)+math.pow(ya_dol - yb_dol,2));
+document.getElementById("nazwa1").innerHTML ="AB= "+AB.tofixed(2);
+
+
+}
+
+function BC_dol(){
+    var xc=parseFloat(document.getElementById("xc").value);
+    var xb=parseFloat(document.getElementById("xb").value);
+    var yc=parseFloat(document.getElementById("yc").value);
+    var yb=parseFloat(document.getElementById("yb").value);
+
+var BC= math.sqrt(math.pow(xb_dol - xc_dol,2)+math.pow(yb_dol - yc_dol,2));
+document.getElementById("nazwa2").innerHTML ="BC= "+BC;
+
+
+}
+
+function AC_dol(){
+    var xa=parseFloat(document.getElementById("xa").value);
+    var xc=parseFloat(document.getElementById("xc").value);
+    var ya=parseFloat(document.getElementById("ya").value);
+    var yc=parseFloat(document.getElementById("yc").value);
+
+var AC= math.sqrt(math.pow(xa_dol - xc_dol,2)+math.pow(ya_dol - yc_dol,2));
+document.getElementById("nazwa3").innerHTML ="AC= "+AC;
+
+
+}
+
+
+</script>
+
+
+var x_dol= parseFloat(document.getElementById('x').value);
+var d_dol= parseFloat(document.getElementById('d').value);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html> 
+<head> 
+<title>
+ Przykład obliczenia V i Pc walca
+</title>
+ <script language="JavaScript">
+function V(r,h)
+{
+ r_liczba=parseFloat(r)
+ h_liczba=parseFloat(h)
+ V_wynik=Math.PI*r_liczba*r_liczba*h_liczba
+ document.getElementsByName('obj')[0].value=V_wynik.toFixed(2); /* na dokument */
+ alert("V="+V_wynik.toFixed(2)+" cm^3"); /*do okna Alert */
+ pokaz1.innerHTML="V="+V_wynik.toFixed(2)+" cm^3"+"<br>"; /* do tabeli */
+
+}
+function Pc(r,h)
+{
+ r_liczba=parseFloat(r)
+ h_liczba=parseFloat(h)
+ Pc_wynik=2*Math.PI*r_liczba*r_liczba+2*Math.PI*r_liczba*h_liczba
+ document.getElementsByName('pole')[0].value=Pc_wynik.toFixed(2);
+ alert("Pc="+Pc_wynik.toFixed(2)+" cm^2");
+ pokaz2.innerHTML="Pc="+Pc_wynik.toFixed(2)+"cm^2";
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie V i Pc walca
+<br> <br>
+<form name="formularz" action="..." onsubmit="V(this.promien.value,this.wysokosc.value); 
+Pc(this.promien.value,this.wysokosc.value);return false"> 
+ Podaj r=
+ <input size="6" name="promien">
+ Podaj h=
+ <input size="6" name="wysokosc">
+ <br> <br>
+ <input TYPE="submit" Value="oblicz" >
+ <br> <br>
+ V=
+ <input size="6" name="obj">
+ Pc=
+ <input size="6" name="pole">
+</form>
+<table>
+ <tr id="pokaz1"></tr>
+ <tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>z20</title>
+</head>
+<body>
+    <p id="wynik"></p>
+
+    w okienkach ma byc
+</body>
+<script>
+    var xa_dol = parseFloat(prompt("Podaj xa"))
+    var ya_dol = parseFloat(prompt("Podaj ya"))
+    var xb_dol = parseFloat(prompt("Podaj xb"))
+    var yb_dol = parseFloat(prompt("Podaj yb"))
+    var xc_dol = parseFloat(prompt("Podaj xc"))
+    var yc_dol = parseFloat(prompt("Podaj yc"))
+    document.getElementById("wynik").innerHTML = `AB=${AB_dol().toFixed(2)} BC=${BC_dol().toFixed(2)} AC=${AC_dol().toFixed(2)}`;
+
+    function AB_dol() {
+        return Math.sqrt(Math.pow(xb_dol-xa_dol, 2) + Math.pow(yb_dol-ya_dol,2));
+    }
+
+    function BC_dol() {
+        return Math.sqrt(Math.pow(xc_dol-xb_dol, 2) + Math.pow(yc_dol-yb_dol,2));
+    }
+
+    function AC_dol() {
+        return Math.sqrt(Math.pow(xc_dol-xa_dol, 2)+ Math.pow(yc_dol-ya_dol,2));
+    }
+
+    
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

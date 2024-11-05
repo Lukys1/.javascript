@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> zadanie 16</title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+<div style="color:darkblue;font-size:43px;">
+ <script language="JavaScript">
+
+
+
+
+
+
+var aPodaj_dol=prompt("Podaj pierwszą liczbę    A=","");
+var bPodaj_dol=prompt("Podaj pierwszą liczbę    B=","");
+        var a=parseInt(aPodaj_dol);
+        var b=parseInt(bPodaj_dol);
+        var tszya;
+        var tszyb;
+        
+        sum1 = a*a*a
+        sum2 = b*b*b
+        sum3 = a*a 
+        sum4 = b*b
+        sumAll = sum1 + 3*sum3 *b +3*a*sum4+sum2
+
+          
+        tszya=a*a*a;
+        dwaa=a*a;
+        tszyb=b*b*b;
+        dwab=b*b;
+        suma=tszya+3*dwaa*b+3*a*dwab+tszyb;
+        document.write("("+a+"+"+b+")^3="+a+"^3+3*(("+a+")^2)+3*("+a+")*(("+b+")^2)+"+b+"^3="+tszya+"+"+3*dwaa*b+"+"+3*a*dwab+"+"+tszyb+"="+suma+" <br>");
+
+        
+        
+        
+        
+
+
+
+
+
+
+
+ function okno_zamknij() 
+ {
+ window.close()
+ }
+
+
+ 
+ </script>
+  <input type="button" value="zamknij okno" onclick="window.close()"/>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>z20</title>
+</head>
+<body>
+    <p id="wynik"></p>
+
+    w okienkach ma byc
+</body>
+<script>
+    var xa_dol = parseFloat(prompt("Podaj xa"))
+    var ya_dol = parseFloat(prompt("Podaj ya"))
+    var xb_dol = parseFloat(prompt("Podaj xb"))
+    var yb_dol = parseFloat(prompt("Podaj yb"))
+    var xc_dol = parseFloat(prompt("Podaj xc"))
+    var yc_dol = parseFloat(prompt("Podaj yc"))
+    document.getElementById("wynik").innerHTML = `AB=${AB_dol().toFixed(2)} BC=${BC_dol().toFixed(2)} AC=${AC_dol().toFixed(2)}`;
+
+    function AB_dol() {
+        return Math.sqrt(Math.pow(xb_dol-xa_dol, 2) + Math.pow(yb_dol-ya_dol,2));
+    }
+
+    function BC_dol() {
+        return Math.sqrt(Math.pow(xc_dol-xb_dol, 2) + Math.pow(yc_dol-yb_dol,2));
+    }
+
+    function AC_dol() {
+        return Math.sqrt(Math.pow(xc_dol-xa_dol, 2)+ Math.pow(yc_dol-ya_dol,2));
+    }
+
+    
+</script>
+</html>

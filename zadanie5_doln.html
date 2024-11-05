@@ -1,0 +1,39 @@
+<script>
+
+{
+    document.write("Wykonał:  Łukasz Dolny numer w dzienniku 6 ".fontcolor("red").fontsize("6").bold()+"<br>");
+ }
+ {
+    document.write(" czyli mam układ [6 mod 4 = 2] czyli układ 2 ".fontcolor("red").fontsize("6").bold()+"<br>");
+ }
+
+ function WinOpen_dolny1() 
+ {
+window.open("grafika1_dol.html","okienko_z5_1","toolbar=no,directories=no,menubar=no,height=380,width=160,top=100,left=100");
+ }
+ function WinOpen_dolny2() 
+ {
+window.open("grafika2_dol.html","okienko_z5_2","toolbar=no,directories=no,menubar=no,height=380,width=160,top=800,left=100");
+ }
+ function WinOpen_dolny3() 
+ {
+window.open("grafika3_dol.html","okienko_z5_3","toolbar=no,directories=no,menubar=no,height=380,width=160,top=100,left=1500");
+ }
+ function WinOpen_dolny4() 
+ {
+window.open("grafika4_dol.html","okienko_z5_4","toolbar=no,directories=no,menubar=no,height=380,width=160,top=800,left=1500");
+ }
+function okno_zamknij_dolny() 
+ {
+ window.close()
+ }
+</script>
+<form>
+
+    
+    <input type="button" name="zadanie3" value="grafika1" onclick="WinOpen_dolny1(' ')">
+    <input type="button" name="zadanie4" value="grafika2" onclick="WinOpen_dolny2(' ')">
+    <input type="button" name="zadanie5" value="grafika3" onclick="WinOpen_dolny3(' ')">
+    <input type="button" name="zadanie5" value="grafika4" onclick="WinOpen_dolny4(' ')"><br><br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_dolny()"/>
+    </form>
