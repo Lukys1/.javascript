@@ -1,0 +1,54 @@
+<textarea cols="70" rows="30">
+    <html>
+        <head>
+        <script type="text/javascript">
+        var czlowiek = {
+       nazwisko: 'Dolny',
+       imie: 'Łukasz',
+       zawod: 'programista',
+       pokaz: function ()
+       {
+        document.write(this.nazwisko + ' ' + this.imie+"<br>")
+        }
+       }
+       pociąg.pokaz();
+       pociąg.wiek=15;
+       pociąg.wypisz=function() {alert('Wiek: ' + this.wiek + 'lat')}
+       pociąg.wypisz();
+       
+       var pociąg={
+           ile_wagonów: '12',
+           kolor:'czarny',
+           rok_produkcji: '2009',
+           pociąg_wyswietl_dolny:function(){
+               document.write('Obiekt: Pociąg<br>Ilość wagonów: '+this.ile_wagonów +' <br> Kolor:' + this.kolor+'<br> Rok produkcji: '+this.rok_produkcji+'<br><br>')
+           }
+       }
+       pociąg.pociąg_wyswietl_dolny();
+       pociąg.liczba_pasazerow=200;
+       pociąg.pociąg_wyswietl_dolny=function() {alert('Liczba pasazerów: ' + this.liczba_pasazerow)}
+       pociąg.pociąg_wyswietl_dolny();
+       
+        </script>
+        </head>
+       <body>
+       <br>
+       Programowanie obiektowe. <br>
+       Obiekt to człowiek<br>
+       Pola:<br>
+       Nazwisko<br>
+       imie<br>
+       zawod<br>
+       metoda: pokaz<br>
+       nowe pole to wiek <br>
+       nowa metoda to wypisz();<br>
+       </body>
+       </html>
+</textarea>
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<html>
+ <head>
+ <script type="text/javascript">
+ var czlowiek = {
+nazwisko: 'Dolny',
+imie: 'Łukasz',
+zawod: 'programista',
+pokaz: function ()
+{
+ document.write(this.nazwisko + ' ' + this.imie+"<br>")
+ }
+}
+czlowiek.pokaz();
+
+var pociąg={
+    ile_wagonów: '10',
+    kolor:'czarny',
+    rok_produkcji: '2009',
+    pociąg_wyswietl_dolny:function(){
+        document.write(this.ile_wagonów + ' ' + this.kolor+' '+this.rok_produkcji)
+    }
+}
+pociąg.pociąg_wyswietl_dolny();
+
+ </script>
+ </head>
+<body>
+<br>
+ Programowanie obiektowe. <br>
+ Obiekt to  pociąg<br>
+ Pola:<br>
+ ile_wagonów<br>
+ kolor<br>
+ rok_produkcji<br>
+ metoda: pokaz<br>
+</body>
+</html>
