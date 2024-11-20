@@ -1,46 +1,46 @@
 <html>
-<head>
-<script type="text/javascript">
-function pociąg(nazwa,kolor,rok_produkcji,ile_wagonów)//początek konstruktora
-{
-this.nazwa=nazwa;
-this.kolor=kolor;
-this.rok_produkcji=rok_produkcji;
-this.ile_wagonów=ile_wagonów;
-}//koniec konstruktora
-pociąg.prototype.wypisz = function () //definicja metody
-{
-alert(this.nazwa + ' ' + this.kolor+ ' ' + this.rok_produkcji+' ' + this.ile_wagonów);
-};
-var pociag1 = new pociąg("EU45", "Niebieski", "2004","20"); // nowy obiekt pociag1
-var pociag2 = new pociąg("SP42", "Czarny", "2007","30"); // nowy obiekt pociag1
-var pociag3 = new pociąg("ST33", "Zielony", "2012","15"); // nowy obiekt pociag1
-var pociag4 = new pociąg("MK23", "Zółty", "2020","25"); // nowy obiekt pociag1
-pociag1.wypisz(); // uruchomienie metody wypisz() dotyczącej pociągu 1
-pociag2.wypisz();
-pociag3.wypisz();
-pociag4.wypisz();
-document.write("dostęp do właściwości"+"<br>");
-// poniżej dostęp do pól pociągu1
-document.write("pociąg pierwszy"+" "+pociag1.nazwa+" "+pociag1.kolor+" "+pociag1.rok_produkcji+" "+pociag1.ile_wagonów+"<br><br>");
-
-document.write("dostęp do właściwości"+"<br>");
-// poniżej dostęp do pól pociągu2
-document.write("pociąg drugi"+" "+pociag2.nazwa+" "+pociag2.kolor+" "+pociag2.rok_produkcji+" "+pociag2.ile_wagonów+"<br><br>");
-
-
-document.write("dostęp do właściwości"+"<br>");
-// poniżej dostęp do pól pociągu3
-document.write("pociąg trzeciy"+" "+pociag3.nazwa+" "+pociag3.kolor+" "+pociag3.rok_produkcji+" "+pociag3.ile_wagonów+"<br><br>");
-
-
-document.write("dostęp do właściwości"+"<br>");
-// poniżej dostęp do pól pociągu1
-document.write("pociąg czwarty"+" "+pociag1.nazwa+" "+pociag1.kolor+" "+pociag1.rok_produkcji+" "+pociag1.ile_wagonów+"<br><br>");
-</script>
-</head>
-<body>
-<br>
-programowanie obiektowe
-</body>
-</html>
+    <head>
+    <script type="text/javascript">
+    function pociąg(nazwa,kolor,rok_produkcji,ile_wagonów)//początek konstruktora
+    {
+    this.nazwa=nazwa;
+    this.kolor=kolor;
+    this.rok_produkcji=rok_produkcji;
+    this.ile_wagonów=ile_wagonów;
+    }//koniec konstruktora
+    pociąg.prototype.wypisz = function () //definicja metody
+    {
+    alert(this.nazwa + ' ' + this.kolor+ ' ' + this.rok_produkcji+' ' + this.ile_wagonów);
+    };
+    var pociag1 = new pociąg("EU45", "Niebieski", "2004","20"); // nowy obiekt pociag1
+    var pociag2 = new pociąg("SP42", "Czarny", "2007","30"); // nowy obiekt pociag1
+    var pociag3 = new pociąg("ST33", "Zielony", "2012","15"); // nowy obiekt pociag1
+    var pociag4 = new pociąg("MK23", "Zółty", "2020","25"); // nowy obiekt pociag1
+    pociag1.wypisz(); // uruchomienie metody wypisz() dotyczącej pociągu 1
+    pociag2.wypisz();
+    pociag3.wypisz();
+    pociag4.wypisz();
+    document.write("dostęp do właściwości"+"<br>");
+    // poniżej dostęp do pól pociągu1
+    document.write("pociąg pierwszy"+" "+pociag1.nazwa+" "+pociag1.kolor+" "+pociag1.rok_produkcji+" "+pociag1.ile_wagonów+"<br><br>");
+    
+    document.write("dostęp do właściwości"+"<br>");
+    // poniżej dostęp do pól pociągu2
+    document.write("pociąg drugi"+" "+pociag2.nazwa+" "+pociag2.kolor+" "+pociag2.rok_produkcji+" "+pociag2.ile_wagonów+"<br><br>");
+    
+    
+    document.write("dostęp do właściwości"+"<br>");
+    // poniżej dostęp do pól pociągu3
+    document.write("pociąg trzeciy"+" "+pociag3.nazwa+" "+pociag3.kolor+" "+pociag3.rok_produkcji+" "+pociag3.ile_wagonów+"<br><br>");
+    
+    
+    document.write("dostęp do właściwości"+"<br>");
+    // poniżej dostęp do pól pociągu4
+    document.write("pociąg czwarty"+" "+pociag4.nazwa+" "+pociag4.kolor+" "+pociag4.rok_produkcji+" "+pociag4.ile_wagonów+"<br><br>");
+    </script>
+    </head>
+    <body>
+    <br>
+    programowanie obiektowe
+    </body>
+    </html>
