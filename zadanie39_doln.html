@@ -1,0 +1,21 @@
+
+<h2><font color="green"> MENU</font></h2>
+<font size="5" color="red"> 1-czerwony<br></font>
+<font size="5" color="blue"> 2-niebieski</font>
+
+ <script>
+ function fun_dol() {
+ var x_dol = prompt("Podaj kolor", "");
+ if(x_dol == 1 || x_dol.toLowerCase() == "czerwony") {
+document.write('<h1 style="color:red;">wczytałeś kolor czerwony </h1><br />'); }
+ else if(x_dol == 2 || x_dol.toLowerCase() == "niebieski") {
+document.write('<h1 style="color:blue;">wczytałeś kolor niebieski  </h1><br />');}
+else{
+    document.write('<h1 style="color:black;">BŁĄD </h1><br />');
+}
+
+}
+
+</script>
+<br>
+<input type="button" name="dolny" value="Oblicz" onclick="fun_dol()" />
