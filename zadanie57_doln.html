@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Zadanie 57</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    
+    
+    
+        <div id="output"></div>
+        <button id="button">Dalej</button>
+        <script language="JavaScript">
+
+            const output = document.getElementById("output");
+            const button = document.getElementById("button");
+            let n = 6;
+
+            function dodaj(){
+                for (let i = n; i < n + 3; i++) {
+                    let wynik1 = Math.sqrt(i);
+                    let wynik2 = Math.sqrt(Math.sqrt(i));
+                    output.innerHTML += `i=${i} pier_2(${i})= ${wynik1.toFixed(2)} pier_4(${i})= ${wynik2.toFixed(2)}<br>`; 
+                }
+                n += 3;
+                if(n>=21){
+                    button.remove()
+                    let wynik1 = Math.sqrt(21);
+                    let wynik2 = Math.sqrt(Math.sqrt(21));
+                    output.innerHTML += `i=${21} pier_2(${21})= ${wynik1.toFixed(2)} pier_4(${21})= ${wynik2.toFixed(2)}<br>`; 
+                }
+            
+            }
+            button.addEventListener("click", dodaj); 
+        </script>
+    </div>
+</body>
+</html>

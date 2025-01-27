@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tabele zadanie2</title>
+</head>
+<body>
+ <script>
+   function porownaj (a, b) {//funkcja z freecodecamp.org, nie ma w instrukcji jak to zrobić, albo jak jest to jest dobrze ukryte
+      if (a < b) {
+         return -1;
+      }
+      if (a > b) {
+         return 1;
+      }
+      return 0;
+};
+   var tab_buc = new Array('ziemniak','ananas','pietruszka',16,4,0,-14);
+   document.write('Sortowanie najpierw od a do z a potem od liczby najmniejszej do najwiekszej ');
+   tab_buc.sort(porownaj)
+   document.write(tab_buc.join() ); 
+ </script>
+</body>

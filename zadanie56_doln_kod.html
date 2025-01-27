@@ -7,36 +7,33 @@
     </head>
     <body>
         <div style="color:blue;font-size:20px;">
+        
+        
+            <div id="output"></div>
+            <button id="button">Dalej</button>
             <script language="JavaScript">
-            
-            function czypierwsza(n) {
-                if (n <= 1) return false;
-                for (let i = 2; i <= Math.sqrt(n); i++) {
-                    if (n % i === 0) return false;
-                }
-                return true;
-            }
     
-            let count = 0;
-            let numerynalinie = 5;
+                const output = document.getElementById("output");
+                const button = document.getElementById("button");
+                let counter = 0;
     
-            for (let i = 0; i < 40; i++) {
-                let w = i * i + i + 41;
-                if (czypierwsza(w)) {
-                    document.write("i=" + i + " w(" + i + ")=" + w + "<br>");
-                    count++;
-                    if (count % numerynalinie === 0) {
-                        document.write("<br>");
+                function dodaj(){
+                    for (let i_d = counter; i_d < counter + 5; i_d++) {
+                        let wynik = Math.pow(i_d, 2) + i_d + 41;
+                        output.innerHTML += `w(${i}) = ${wynik}<br>`; 
+                    }
+                    counter += 5;
+                    if(counter>=40){
+                        button.remove()
                     }
                 }
-            }
+                
+                button.addEventListener("click", dodaj); 
             </script>
         </div>
     </body>
-    </html>
-    
+    </html>    
 </textarea>
-
 
 
 

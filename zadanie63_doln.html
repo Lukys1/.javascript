@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>63</title> 
+</head> 
+<body> 
+<script> 
+var TaB_dol = new Array('Wisła', 'Odra', 'Bug', 'Nil', 'Jangcy', 'Amazonka', 'Niger'); 
+
+for (i = 0; i<TaB_dol.length; i++) 
+{ 
+document.write(TaB_dol[i] + "<br>"); 
+} 
+
+
+document.write("<b>Po dołączeniu elementu </b><br>");
+TaB_dol.push('Wołga'); 
+
+for (i = 0; i<TaB_dol.length; i++) 
+{ 
+document.write(TaB_dol[i] + "<br>"); 
+} 
+
+
+document.write("<b>Po usunięciu pierwszego elementu </b><br>");
+TaB_dol.shift();
+for (i = 0; i<TaB_dol.length; i++) 
+{ 
+document.write(TaB_dol[i] + "<br>"); 
+} 
+
+document.write("<b>Po odwróceniu tablicy </b><br>");
+TaB_dol.reverse(); 
+for (i = 0; i<TaB_dol.length; i++) 
+{ 
+document.write(TaB_dol[i] + "<br>"); 
+} 
+
+</script> 
+</body> 
+</html>

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>66</title>
+    <style>
+        td,img{
+            width:100px;
+            height:100px;
+        }
+        td,table{
+            border:2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="td1">
+
+            </td>
+            <td id="td2">
+                
+            </td>
+            <td id="td3">
+                
+            </td>
+        </tr>
+        <tr>
+            <td id="td4">
+
+            </td>
+            <td id="td5">
+                
+            </td>
+            <td id="td6">
+                
+            </td>
+        </tr>
+        <tr>
+            <td id="td7">
+
+            </td>
+            <td id="td8">
+                
+            </td>
+            <td id="td9">
+                
+            </td>
+        </tr>
+    </table>
+    <script>
+        let images=
+        [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.png"
+        ]
+        let elements = 
+        [
+            document.getElementById('td1'),document.getElementById('td2'),document.getElementById('td3'),
+            document.getElementById('td4'),document.getElementById('td5'),document.getElementById('td6'),
+            document.getElementById('td7'),document.getElementById('td8'),document.getElementById('td9')
+        ]
+        function setImage(){
+            image = images[Math.floor(Math.random()*10)%images.length];
+            elements[Math.floor(Math.random() * 9)].innerHTML = "<img src="+image+">";
+            setTimeout(setImage,2000);
+        }
+        setImage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Tabele zadanie1</title> 
+</head> 
+<body> 
+<script> 
+var suma_dol=0; 
+var TT_dol = new Array() 
+let n_dol =parseFloat(prompt("podaj liczbę na której kończy się petla"))
+let ilo_dol= 1;
+
+for (i = 0; i < n_dol+1; i++) { 
+TT_dol[i] = 3*(i+1) ; 
+
+document.write("TT["+i+"]="+TT_dol[i]+"<br>"); 
+
+ ilo_dol *= 3*(i+1); 
+}
+
+document.write("Iloczyn="+ilo_dol+"<br>"); 
+</script> 
+</body> 
+</html> 

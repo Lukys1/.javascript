@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Tabele zadanie1</title> 
+</head> 
+<body> 
+<script> 
+var suma_dol=0; 
+var T_dol = new Array() 
+let n_dol =parseFloat(prompt("podaj liczbę na której kończy się petla"));
+for (i = 0; i < n_dol+1; i++) { 
+T_dol[i] = i; 
+suma_dol=suma_dol+i; 
+document.write("T["+i+"]="+T_dol[i]+"<br>"); 
+} 
+var srednia_dol=suma_dol/i; 
+document.write("suma="+suma_dol+"<br>"); 
+document.write("średnia="+srednia_dol.toFixed(2)+"<br>"); 
+</script> 
+</body> 
+</html> 
