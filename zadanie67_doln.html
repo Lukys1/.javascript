@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>67</title>
+</head>
+<body>
+    <form id="input">
+        <input type="number" id="1" required>
+        * x +
+        <input type="number" id="2" required>
+        * y =
+        <input type="number" id="3" required>
+        <br> 
+        <input type="number" id="4" required>
+        * x +
+        <input type="number" id="5" required>
+        * y =
+        <input type="number" id="6" required>
+        <br>
+        <button type="button" onclick="oblicz()">Oblicz</button>
+    </form>
+
+    <div id="result"></div>
+
+<script>
+function oblicz() {
+    let A = [
+        [
+            parseFloat(document.getElementById("1").value),
+            parseFloat(document.getElementById("2").value),
+            parseFloat(document.getElementById("3").value)
+        ],
+        [
+            parseFloat(document.getElementById("4").value),
+            parseFloat(document.getElementById("5").value),
+            parseFloat(document.getElementById("6").value)
+        ]
+    ];
+
+    const W = A[0][0] * A[1][1] - A[0][1] * A[1][0];
+    const WX = A[0][2] * A[1][1] - A[0][1] * A[1][2];
+    const WY = A[0][0] * A[1][2] - A[0][2] * A[1][0];
+
+    let resultText = "";
+
+    if (W !== 0) {
+        const X = WX / W;
+        const Y = WY / W;
+        resultText += `Układ oznaczony: jedno rozwiązanie<br>`;
+        resultText += `X = ${X.toFixed(2)}<br>`;
+        resultText += `Y = ${Y.toFixed(2)}<br>`;
+    } else if (WX !== 0 || WY !== 0) {
+        resultText += `Układ sprzeczny<br>`;
+    } else {
+        resultText += `Układ ma nieskończenie wiele rozwiązań<br>`;
+    }
+
+    document.getElementById('result').innerHTML = resultText;
+}
+</script>
+</body>
+</html>
+<!--Łukasz Dolny 2P-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Łukasz Dolny 2P-->

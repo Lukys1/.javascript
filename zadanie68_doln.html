@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>68</title>
+    <script>
+        function calc(){
+            const matryca=document.getElementById("matryca");
+            const cols = parseInt(document.getElementById("cols").value);
+            const rows = parseInt(document.getElementById("rows").value);
+            let nums = [[,,],[,,],[,,]];
+
+            for(let i = 0; i < rows; i++){
+                for(let j = 0; j < cols; j++){
+                    nums[i][j] = parseInt(prompt(`Podaj wartości dla`+i+','+j));
+                }
+            }
+
+            const a = nums[0][0], b = nums[0][1], c = nums[0][2];
+            const d = nums[1][0], e = nums[1][1], f = nums[1][2];
+            const g = nums[2][0], h = nums[2][1], i = nums[2][2];
+
+            let raz = (a * e * i + b * f * g + c * d * h); 
+            let dwa = (c * e * g - b * d * i - a * f * h);
+            let wynik = raz - dwa;
+            
+          
+
+            matryca.innerHTML=`${a} ${b} ${c} <br> ${d} ${e} ${f}<br> ${g} ${h} ${i}<br>     (${a}*${e}*${i}+${b}*${f}*${g}+${c}*${d}*${h}) - (${c}*${e}*${g}-${b}*${d}*${i}-${a}*${f}*${h})=${raz}-${wynik}=${dwa} `;
+
+
+        }
+
+           
+        
+            
+    </script>
+</head>
+<body>
+    Wiersze = <input type="number" id="rows" value="3"> Kolumny = <input type="number" id="cols" value="3">
+    <br/><button onclick="calc()">Twórz tabelę!</button><br>
+    <span id="matryca"></span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Łukasz Dolny 2P-->
