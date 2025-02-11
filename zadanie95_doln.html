@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data i Czas - Kartka z Kalendarza</title>
+    <style>
+        .kalendarz {
+            border: 2px solid black;
+            width: 200px;
+            height: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: 50px auto;
+            background-color: #f8f8f8;
+            box-shadow: 3px 3px 10px #888;
+        }
+        .dzien {
+            font-size: 108px;
+            font-weight: bold;
+            color: red;
+        }
+        .miesiac-rok {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+        }
+        .czas {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function aktualizujDateICzas() {
+            const data = new Date();
+            const opcjeMiesiacaIRoku = { year: 'numeric', month: 'long' };
+            const opcjeCzasu = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+            const dzien = data.getDate();
+            const miesiacRok = data.toLocaleDateString('pl-PL', opcjeMiesiacaIRoku);
+            const czasPolski = data.toLocaleTimeString('pl-PL', opcjeCzasu);
+
+            document.getElementById('dzien').innerHTML = dzien;
+            document.getElementById('miesiac-rok').innerHTML = miesiacRok;
+            document.getElementById('czas').innerHTML = czasPolski;
+        }
+
+        setInterval(aktualizujDateICzas, 1000);
+        window.onload = aktualizujDateICzas;
+    </script>
+</head>
+<body>
+    <div class="kalendarz">
+        <div class="miesiac-rok" id="miesiac-rok"></div>
+        <div class="dzien" id="dzien"></div>
+        <div class="czas" id="czas"></div>
+    </div>
+</body>
+</html>

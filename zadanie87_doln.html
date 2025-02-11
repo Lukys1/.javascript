@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z87</title>
+
+    Wpisz Hasło do strony (napewno nie gieras)
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            if (password === "okoń") {
+                window.location.href = "zadanie84_doln.html";
+            } else {
+                alert("Nieprawidłowe hasło!");
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validatePassword()">
+        <label for="password">Wprowadź hasło:</label>
+        <input type="password" id="password" name="password" />
+        <input type="submit" value="OK" />
+    </form>
+</body>
+</html>

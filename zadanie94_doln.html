@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Data i czas po polsku</title>
+    <script type="text/javascript">
+        function wyswietlDateICzas() {
+            const data = new Date();
+            const opcjeDaty = { year: 'numeric', month: 'long', day: 'numeric' };
+            const opcjeCzasu = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+            const dataPolska = data.toLocaleDateString('pl-PL', opcjeDaty);
+            const czasPolski = data.toLocaleTimeString('pl-PL', opcjeCzasu);
+
+            document.getElementById('data').innerHTML = `<b>Data:</b> ${dataPolska}`;
+            document.getElementById('czas').innerHTML = `<b>Czas:</b> ${czasPolski}`;
+        }
+    </script>
+</head>
+<body onload="wyswietlDateICzas()">
+    <h2>Wyświetlam bieżącą datę i czas</h2>
+    <p id="data"></p>
+    <p id="czas"></p>
+</body>
+</html>

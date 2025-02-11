@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z88</title>
+    <script>
+        window.onload = function() {
+            document.getElementsByName('password')[0].value = '';
+        };
+    </script>
+</head>
+<body>
+    <form action="?" onsubmit="window.location.href = this.password.value + '.html'; return false" autocomplete="off">
+        <input type="password" name="password" />
+        <input type="submit" value="OK" />
+    </form>
+</body>
+</html>

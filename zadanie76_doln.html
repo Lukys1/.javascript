@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<head> 
+  <title>z76</title> 
+  <style>
+        td,table{
+            border:2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+
+  <h1>Obiekt location </h1>
+  Obiekt ten zawiera informacje o bieżącym adresie URL.<br>
+   Jego właściwości odpowiadają kolejnym  członom adresu.  <br>
+<u>Ogólna postać lokalizatora URL to:</u>  protocol://host:port/path#fragment?query<br>
+
+
+<h2>Właściwości obiektu location</h2>
+
+  <li> <u>protocol</u> -> to  łańcuch  znakowy  określający  protokół,  zgodnie  z  którym   
+    należy nawiązać łączność z podanym serwerem (np. http:, ftp:, file:),   
+    <li> <u>host</u>  ->  to łańcuch znakowy określający nazwę serwera z bieżącego adresu, port 
+      to łańcuch znakowy odpowiadający portowi, przez który należy połączyć się z serwerem   
+   <li> <u>pathname</u>  ->  to łańcuch znakowy określający ścieżkę dostępu do dokumentu na serwerze, 
+    <li><u> hash</u>  ->  to łańcuch znakowy odpowiadający nazwie zakotwiczenia (przypisanie tu jakiejś wartości 
+      spowoduje przewinięcie dokumentu do wskazanego punktu),
+      <li> serach  ->  to człon lokalizatora URL. 
+    </li>
+
+
+    <table>
+      <tr>
+        <th>Nazwa</th>
+        <th>Opis</th>
+        <th>Dostępność</th>
+      </tr>
+      <tr>
+        <td>Hash</td>
+        <td>Część adresu URL znajdująca się za znakiem #.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>Host</td>
+        <td>Część adresu URL zawierająca nazwę hosta oraz numer portu.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>hostname</td>
+        <td>Część adresu URL zawierająca nazwę hosta.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>Href</td>
+        <td>Pełny adres URL.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>pathname</td>
+        <td>Część adresu URL zawierająca ścieżkę dostępu i nazwę pliku.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>Port</td>
+        <td>Część adresu URL zawierająca numer portu.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>protocol</td>
+        <td>Część adresu URL zawierająca nazwę protokołu (np. http, ftp).</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+      <tr>
+        <td>Search</td>
+        <td>Część adresu URL znajdująca się za znakiem zapytania.</td>
+        <td>FF, IE3, NN2, OP7</td>
+      </tr>
+    </table>
+    
+
+
+   <h2> Metody obiektu location </h2>
+
+
+   <ol>
+<li><u>Metoda assign</u><br>
+ Wywołanie: location.assign(url) <br>
+Metoda assign wczytuje dokument o adresie wskazanym przez argument url. <br>
+
+<li><u>Metoda reload</u><br>
+ Wywołanie: location.reload(force) <br>
+Metoda reload wymusza ponowne wczytanie bieżącej strony. <br>
+Jeśli obecny jest argument force i ma on wartość true, wymusza to ponowne wczytanie zawartości witryny z serwera.<br>
+ W pozostałych przypadkach przeglądarka może wczytać ją z pamięci cache. <br>
+
+<li><u>Metoda replace</u><br>
+ Wywołanie: location.replace(url) <br>
+Metoda replace zastępuje bieżący dokument przez wczytany spod adresu wskazanego przez argument url.  <br>
+<u>Różnica między assign a repleace</u><br>
+
+ W przeciwieństwie do metody assign, po zastosowaniu replace bieżąca strona nie zostanie zapisana w historii przeglądanych witryn, nie będzie więc można się do niej ponownie odwołać poprzez wciśnięcie przycisku Wstecz bądź też wywołanie history.go(-1).<br> 
+Tę metodę można wykorzystać np. w sytuacji, kiedy witryna została przeniesiona pod inny adres, a pod starym ma być umieszczona stosowna informacja oraz automatyczne przekierowanie użytkownika (po zadanym czasie).  <br>
+
+<li><u>Metoda toString</u><br>
+ Wywołanie: location.toString()<br> 
+Metoda toString przekształca zawartość obiektu location w ciąg znaków reprezentujący <br>
+przechowywany przezeń adres URL. <br>
+
+<ol>
+  <li>  window.location.href -> przechowuje pełny adres 
+    <li> window.location.hostname -> wyłącznie domenę.  
+      <li> window.location.reload() ->  odświeża stronę, 
+        <li> window.location.assign() ->  przechodzi na podany adres, 
+          <li> window.location.replace() ->  przechodzi na podany adres i nie tworzy nowego wpisu w historii przeglądania. 
+</ol>
+</ol>
+
+</head>
+</body> 
+</html>

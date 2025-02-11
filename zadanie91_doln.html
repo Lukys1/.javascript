@@ -1,0 +1,32 @@
+<html> 
+<head> 
+    <script language='JavaScript' type='text/JavaScript'> 
+        function weryfikacja_hasla()  
+        { 
+            var prob = 1; 
+            var haslo = prompt('Podaj hasło','');  
+            if (haslo != null)  
+            { 
+                while (prob < 3)  
+                { 
+                    if (!haslo) history.go(-1); 
+                    //Metoda toLowerCase zwraca wartość łańcucha znaków skonwertowanego na małe litery 
+                    if (haslo.toLowerCase() == 'dolny')  // Użycie toLowerCase()
+                    { 
+                        alert('Hasło OK!'); 
+                        window.open('index.html','_top'); 
+                        break; 
+                    }  
+                    prob+=1; 
+                    var haslo = prompt('Złe hasło. Spróbuj ponownie','Hasło'); 
+                } 
+            }  
+            if (haslo != null) { 
+                if (haslo.toLowerCase() != 'dolny' + prob == 3) history.go(-1); return ' ';
+            }
+        } 
+    </script>
+</head> 
+<body onload="weryfikacja_hasla()"> 
+</body> 
+</html> 
