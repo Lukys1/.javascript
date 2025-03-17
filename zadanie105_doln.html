@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z105</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function f(w,i){
+        var pola=['imie','nazwisko','adres','kod_pocztowy'];
+        dane=w.elements;
+        for(i=0;i<pola.length;i++){
+        if(dane[pola[i]].value==""){
+        dane[pola[i]].focus(); alert("Musisz wypelnic wymagane pola"); return false;
+        }
+        }
+        return true;
+        }
+        </script>
+       <form onsubmit="[b]return [/b]f(this)">
+       <input type="text" name="imie">
+       <input type="text" name="nazwisko">
+       <input type="text" name="kod_pocztowy">
+       </form>
+       
+    
+</body>
+</html>

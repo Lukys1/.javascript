@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z106</title>
+</head>
+<body>
+    <script>
+        function sprawdz(formularz)
+        {
+        for (i = 0; i < formularz.length; i++)
+        {
+        var pole = formularz.elements[i];
+        if (!pole.disabled && !pole.readonly && (pole.type == "text" || pole.type == "password" || 
+        pole.type == "textarea") && pole.value == "")
+        {
+        alert("Proszę wypełnić wszystkie pola!");
+        return false;
+        }
+        }
+        return true;
+        }
+        </script>
+        <form action="mailto:adres e-mail?subject=temat" method="post" enctype="text/plain" 
+        onsubmit="if (sprawdz(this)) return true; return false">
+        <div>
+        <input type="text" name="a"><br>
+        <input type="password" name="b"><br>
+        <textarea name="c" cols="20" rows="10"></textarea><br>
+        <input type="submit" value="OK">
+        </div>
+        </form>
+</body>
+</html>

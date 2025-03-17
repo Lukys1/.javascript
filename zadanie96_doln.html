@@ -1,0 +1,36 @@
+<html>  
+<head>  
+<title>z96</title> 
+<script language="JavaScript"> 
+
+document.write("Dolny".fontcolor("#FF0000").fontsize("70")+"<br>");
+
+document.write("dzis = new Date()-->Tworzy nowy obiekt Date, który zawiera bieżącą datę i czas. Zmienna dzis przechowuje ten obiekt. <br>".fontcolor("#429e42").fontsize("5"))
+document.write("dzis = dzis.getHours()-->zwraca godzinę (od 0 do 23) z obiektu Date dzis. Zmienna dzis teraz przechowuje tę godzinę. <br>".fontcolor("#429e42").fontsize("5"))
+document.write("dzis = dzis.getMinutes()-->zwraca minuty (od 0 do 59) z obiektu Date dzis. Zmienna dzis teraz przechowuje tę liczbę minut<br>".fontcolor("#429e42").fontsize("5"))
+document.write("dzis = dzis.getMonth()+1-->zwraca miesiąc (od 0 do 11) z obiektu Date dzis. Dodając 1, uzyskujemy faktyczny numer miesiąca (od 1 do 12). Zmienna dzis teraz przechowuje numer miesiąca. <br>".fontcolor("#429e42").fontsize("5"))
+document.write(" dzis = dzis.getDate()-->zwraca dzień miesiąca (od 1 do 31) z obiektu Date dzis. Zmienna dzis teraz przechowuje ten dzień. <br>".fontcolor("#429e42").fontsize("5"))
+document.write(" dzis = dzis.getFull Year()-->zwraca rok (cztery cyfry) z obiektu Date dzis. Zmienna dzis teraz przechowuje ten rok. <br>".fontcolor("#429e42").fontsize("5"))
+
+  
+
+
+function pushbutton() { 
+alert("Czesc !");} 
+</script> 
+</head>  
+<body>  
+Ostatnio zmodyfikowany    
+<script language="LiveScript"> 
+document.write(document.lastModified,"<br>") 
+</script> 
+<form> 
+<input type="button" name="Button1" value="Naciśnij mnie" onclick="pushbutton()"> 
+</form>  
+<script language="JavaScript"> 
+dzis = new Date() 
+document.write("<br>Aktualny czas : ",dzis.getHours(),":",dzis.getMinutes()) 
+document.write("<br>Aktualna data : ",dzis.getMonth()+1,",",dzis.getDate(),",",dzis.getFullYear()); 
+</script> 
+</body>  
+</html>

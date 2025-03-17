@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoper</title>
+    <script>
+        var poczatek_dol, koniec_dol;
+
+        function dolny_start() {
+            start_dol = new Date(); 
+            poczatek_dol = start_dol.getTime();
+        }
+
+        function dolny_stop() {
+            stop_dol = new Date();
+            koniec_dol = stop_dol.getTime();
+            
+            roznica_dol = koniec_dol - poczatek_dol; 
+            document.getElementById('pokaz1').innerHTML = (roznica_dol / 1000) + " s"; 
+        }
+    </script>
+</head>
+<body>
+    <h2>Stoper</h2>
+    <form name="formularz" action="...">
+        <input type="button" name="Button1" value="START stoper" onclick="dolny_start()">
+        <input type="button" name="Button2" value="STOP stoper" onclick="dolny_stop()">
+    </form>
+
+    <script>
+        dzis_dol = new Date();
+        document.write("<br>Aktualny czas : " + dzis_dol.getHours() + ":" + dzis_dol.getMinutes());
+    </script>
+
+    <table border="1">
+        <tr id="pokaz1"></tr>
+    </table>
+</body>
+</html>

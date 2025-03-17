@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przyciski JavaScript</title>
+    <style>
+        .btn {
+            margin: 10px;
+            padding: 25px;
+            font-size: 48px;
+            border: 5px solid black;
+            border-radius: 40px;
+            transition: border-radius 0.3s; 
+            cursor: pointer; 
+            background-color: aqua;
+        }
+        .btn:hover {
+            border-radius: 5px;
+        }
+        .btn-red {
+            background-color: rgb(243, 53, 53); 
+            color: rgb(0, 0, 0); 
+        }
+        .btn-black {
+            background-color: rgb(105, 98, 98);
+            color: rgb(0, 0, 0);
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn" onclick="pokazDateModyfikacji()">Ostatnia data modyfikacji</button>
+    <button class="btn btn-red" onclick="pokazAktualnaDate()">Aktualna data</button> <br>
+    <button class="btn btn-black" onclick="pokazAktualnaGodzine()">Aktualna godzina</button>
+
+    <div id="output1"></div> 
+    <div id="output2"></div> 
+    <div id="output3"></div> 
+
+    <script>
+        function pokazDateModyfikacji() {
+            document.getElementById("output1").innerText = "Ostatnio zmodyfikowany: " + document.lastModified+"";
+        }
+        
+
+        function pokazAktualnaDate() {
+            let data = new Date();
+            document.getElementById("output2").innerText = "Dzisiejsza data: " + data.toLocaleDateString('pl-PL'); 
+        }
+        
+
+        function pokazAktualnaGodzine() {
+
+
+            let godz = new Date();
+            document.getElementById("output3").innerText = "Aktualna godzina: " + godz.toLocaleTimeString('pl-PL'); 
+        }
+    </script>
+
+</body>
+</html>

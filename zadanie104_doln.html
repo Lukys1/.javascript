@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z104</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            background: #ffe680;
+            padding: 20px;
+            border-radius: 10px;
+            width: 450px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <h2>AlkoCAR</h2>
+        Spożyłem: <input type="number" id="piwo"  >ml piwa (np. 500)<br>
+        Spożyłem:<input type="number" id="wino" >ml wina (np. 150)<br>
+        Spożyłem: <input type="number" id="wodka" >ml wódki (np. 50)<br>
+ 
+        <label>Ile godzin temu piłeś?</label>
+        <input type="number" id="godziny"><br>
+       
+ 
+        <label>Płeć:</label>
+        <input type="radio" name="plec" value="mezczyzna" checked> Mężczyzna
+        <input type="radio" name="plec" value="kobieta"> Kobieta <br>
+ 
+        <label>Waga (kg):</label>
+        <input type="number" id="waga"><br>
+ 
+        <label>Czy piłeś na pusty żołądek?</label>
+        <input type="radio" name="zaladek" value="pusty" checked> Pusty
+        <input type="radio" name="zaladek" value="sredni"> Średni
+        <input type="radio" name="zaladek" value="pelny"> Pełny<br>
+ 
+        <button id="oblicz">Oblicz</button>
+        <div id="wynik"></div>
+    </div>
+ 
+    <script>
+        document.getElementById("oblicz").addEventListener("click", function() {
+            let piwo = parseInt(document.getElementById("piwo").value) || 0;
+            let wino = parseInt(document.getElementById("wino").value) || 0;
+            let wodka = parseInt(document.getElementById("wodka").value) || 0;
+            let godziny = parseInt(document.getElementById("godziny").value) || 0;
+            let plec = document.querySelector('input[name="plec"]:checked').value;
+            let waga = parseInt(document.getElementById("waga").value) || 70;
+            let zaladek = document.querySelector('input[name="zaladek"]:checked').value;
+ 
+            let alkohol = (piwo * 0.05) + (wino * 0.12) + (wodka * 0.40);
+            alkohol *= 0.8;
+
+            if (zaladek==="sredni"){
+                promile*=0.9
+            }
+            else if (zaladek="pelny"){
+                promile*=0.8
+            }
+
+ 
+            let wspAbsorpcji = plec === "mezczyzna" ? 0.68 : 0.55;
+            let promile = (alkohol / (waga * wspAbsorpcji)) - (godziny * 0.15);
+ 
+            if (promile < 0) promile = 0;
+ 
+            let wynikDiv = document.getElementById("wynik");
+            wynikDiv.innerHTML = promile.toFixed(2) + "promila";
+            if (promile <= 0.2) {
+                wynikDiv.innerHTML += " MOŻESZ JECHAĆ!";
+            } else {
+                wynikDiv.innerHTML += " NIE MOŻESZ JECHAĆ!";
+            }
+        });
+    </script>
+ 
+</body>
+</html>
+ 

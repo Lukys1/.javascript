@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z97</title>
+</head>
+<body>
+    Obliczanie ile dni przeżyłeś<br><br><br>
+
+    <form name="formularz" action="..." onsubmit="dni_nazwisko(this.dzien.value, this.miesiac.value, this.rok.value); return false;">
+        Podaj dzień=
+        <input size="6" name="dzien">
+        Podaj miesiąc=
+        <input size="6" name="miesiac">
+        Podaj rok=
+        <input size="6" name="rok">
+        <br>
+        <br>
+        <input type="submit" value="oblicz">
+        <br>
+        <br>
+        Ilość dni=
+        <input size="6" name="ilosc">
+    </form>
+
+    <br>
+    <table>
+        <tr id="pokaz1"></tr>
+        <tr id="pokaz2"></tr>
+    </table>
+
+    <script language="JavaScript">
+        function dni_nazwisko(dzien, miesiac, rok) {
+            d_liczba = parseFloat(dzien); // zamiana tekstu na liczbę, tekst który był parametrem funkcji
+            m_liczba = parseFloat(miesiac);
+            r_liczba = parseFloat(rok);
+
+            var dzis = new Date(); 
+            // utworzenie obiektu z dzisiejszą datą
+            var urodziny = new Date(r_liczba, m_liczba - 1, d_liczba);
+            // utworzenie obiektu z datą urodzin użytkownika
+            //  m_liczba-1  musi być -1  bo komputer styczeń=0
+
+            // Obliczenie liczby dni od urodzin do dziś
+            var ilosc_wynik = Math.floor((dzis - urodziny) / (1000 * 60 * 60 * 24));
+            // Math.floor- metoda matematyczna  zaokrąglająca
+            // różnica (dzis- urodziny) podaje wynik w milisekundach 
+            // podzielenie przez (1000 * 60 * 60 * 24) przelicza milisekundy na dni
+
+            document.getElementsByName('ilosc')[0].value = ilosc_wynik;
+            // wyprowadzanie do okienka formularza
+            alert('Ilość dni: ' + ilosc_wynik);
+            // wyprowadzanie do okienka alert
+            document.getElementById('pokaz1').innerHTML = "Ilość dni=" + ilosc_wynik + " dni<br>";
+            // wyprowadzenie do tabeli
+
+            var czyRok = dzis.getFullYear();
+            var czyMiesiac = dzis.getMonth();
+            var czyDzien = dzis.getDate();
+            // przypisanie dzisiejszej daty do zmiennych
+
+            // teraz sprawdzanie warunków czy masz więcej czy mniej niż 18 lat
+            if ((czyRok == (r_liczba + 18)) && (czyMiesiac == (m_liczba - 1)) && (czyDzien == d_liczba)) {
+                document.getElementById('pokaz2').innerHTML = "Masz dziś 18 urodziny!";
+            } else if (czyRok < (r_liczba + 18)) {
+                document.getElementById('pokaz2').innerHTML = "Nie masz jeszcze 18 lat!";
+            } else if ((czyRok == (r_liczba + 18)) && (czyMiesiac < (m_liczba - 1))) {
+                document.getElementById('pokaz2').innerHTML = "Masz już 18 lat!";
+            } else if ((czyRok == (r_liczba + 18)) && (czyMiesiac == (m_liczba - 1)) && (czyDzien < d_liczba)) {
+                document.getElementById('pokaz2').innerHTML = "Masz już 18 lat!";
+            } else if (czyRok > (r_liczba + 18)) {
+                document.getElementById('pokaz2').innerHTML = "Masz już 18 lat!";
+            } else if ((czyRok == (r_liczba + 18)) && (czyMiesiac > (m_liczba - 1))) {
+                document.getElementById('pokaz2').innerHTML = "Nie masz jeszcze 18 lat!";
+            } else if ((czyRok == (r_liczba + 18)) && (czyMiesiac == (m_liczba - 1)) && (czyDzien > d_liczba)) {
+                document.getElementById('pokaz2').innerHTML = "Nie masz jeszcze 18 lat!";
+            }
+        }
+    </script>
+
+</body>
+</html>
