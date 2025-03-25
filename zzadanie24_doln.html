@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+  <meta charset="utf-8"> 
+  <title>z24</title> 
+  <script type="text/javascript"> 
+    var canvas; 
+    var rodzaj; 
+    var x = 200; 
+    var y = 20; 
+    var dy = 10; 
+    var kolory = ["blue", "red", "yellow", "green"]; 
+    var i = 0; 
+    var o = 100; 
+    var bounce = 0; 
+
+    function draw() { 
+        canvas = document.getElementById('image1'); 
+        rodzaj = canvas.getContext('2d'); 
+        setInterval(anim, o); 
+    } 
+
+    function anim() { 
+        let bounceCount = document.getElementById('bounceCount'); 
+        rodzaj.clearRect(0, 0, canvas.width, canvas.height); 
+        y += dy; 
+
+        if (y > (canvas.height - 20) || y < 20) { 
+            dy = -dy; 
+            i = (i + 1) % kolory.length; 
+            setInterval(anim, o-2); 
+            bounce++; 
+            if (bounceCount) {
+                bounceCount.innerHTML = bounce; 
+            }
+        } 
+
+        rodzaj.beginPath(); 
+        rodzaj.fillStyle = kolory[i]; 
+        rodzaj.arc(x, y, 20, 0, Math.PI * 2, true); 
+        rodzaj.closePath(); 
+        rodzaj.fill(); 
+    } 
+  </script> 
+
+  <style type="text/css"> 
+      canvas { border: 1px solid blue; } 
+  </style> 
+</head> 
+<body onload="draw();"> 
+
+  <canvas id="image1" width="400" height="400"> 
+    Twoja przeglądarka nie wspiera elementu canvas! 
+  </canvas> 
+  <br>
+  <span>Ilość odbić: <span id="bounceCount">0</span></span>
+
+</body> 
+</html>

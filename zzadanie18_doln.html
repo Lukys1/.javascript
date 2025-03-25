@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>z18</title> 
+    <script type="text/javascript"> 
+        function rysuj() { 
+            var rysowanie = document.getElementById('obrazek'); 
+            var rodzaj = rysowanie.getContext('2d'); 
+
+
+            rodzaj.strokeStyle = 'black'; 
+rodzaj.lineWidth = 20; 
+rodzaj.lineCap = 'butt'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(70, 250); 
+rodzaj.lineTo(70, 400); 
+rodzaj.stroke(); 
+rodzaj.lineWidth = 20; 
+rodzaj.lineCap = 'butt'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(0, 325); 
+rodzaj.lineTo(150, 325); 
+
+
+rodzaj.stroke(); 
+rodzaj.lineCap = 'round'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(240, 250); 
+rodzaj.lineTo(240, 400); 
+rodzaj.lineWidth =14; 
+rodzaj.strokeStyle = "green";
+rodzaj.stroke(); 
+rodzaj.lineCap = 'round'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(170, 325); 
+rodzaj.lineTo(310, 325); 
+rodzaj.lineWidth =14; 
+rodzaj.strokeStyle = "green";
+
+
+rodzaj.stroke(); 
+rodzaj.lineCap = 'square'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(400, 250); 
+rodzaj.lineTo(400, 400); 
+rodzaj.lineWidth = 6; 
+rodzaj.strokeStyle = "aqua";
+rodzaj.stroke();
+rodzaj.lineCap = 'square'; 
+rodzaj.beginPath(); 
+rodzaj.moveTo(350, 325); 
+rodzaj.lineTo(450, 325); 
+rodzaj.lineWidth = 6; 
+rodzaj.strokeStyle = "aqua";
+rodzaj.stroke();
+        }
+
+
+
+    </script> 
+</head> 
+<body onload="rysuj();"> 
+    <canvas id="obrazek" width="3000" height="3000"> 
+
+              </canvas> 
+</body> 
+</html>   

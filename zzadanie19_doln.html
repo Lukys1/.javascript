@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zadanie 19</title>
+        <style>
+            canvas {
+                background-color: white;
+            }
+        </style>
+        <script type="text/javascript">
+            function rysuj() {
+                var rysowanie = document.getElementById("obrazek");
+                var rodzaj = rysowanie.getContext("2d");
+                rodzaj.beginPath();
+                rodzaj.moveTo(250, 500);
+                rodzaj.lineTo(300, 100);
+                rodzaj.lineTo(550, 100);
+                rodzaj.lineTo(600, 500);
+                rodzaj.lineTo(250, 500);
+                rodzaj.fill();
+                rodzaj.lineWidth = 2;
+                rodzaj.lineJoin = "bevel";
+                rodzaj.stroke();
+                rodzaj.beginPath();
+                rodzaj.strokeStyle = "white";
+                rodzaj.moveTo(325, 400);
+                rodzaj.lineTo(425, 450);
+                rodzaj.lineTo(525, 400);
+                rodzaj.lineWidth = 20;
+                rodzaj.lineJoin = "miter";
+                rodzaj.stroke();
+                rodzaj.beginPath();
+                rodzaj.strokeStyle = "white";
+                rodzaj.moveTo(325, 350);
+                rodzaj.lineTo(425, 400);
+                rodzaj.lineTo(525, 350);
+                rodzaj.lineWidth = 20;
+                rodzaj.lineJoin = "miter";
+                rodzaj.stroke();
+                rodzaj.beginPath();
+                rodzaj.strokeStyle = "white";
+                rodzaj.moveTo(325, 300);
+                rodzaj.lineTo(425, 350);
+                rodzaj.lineTo(525, 300);
+                rodzaj.lineWidth = 20;
+                rodzaj.lineJoin = "miter";
+                rodzaj.stroke();
+            }
+        </script>
+    </head>
+    <body onload="rysuj()">
+        <canvas id="obrazek" height="1000" width="1000"> Twoja przeglądarka nie wspiera Canvas! </canvas>
+
+</body>
+</html>

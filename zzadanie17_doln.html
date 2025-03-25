@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z17</title>
+</head>
+<body>
+    <canvas id="obrazek" width="500" height="500"></canvas>
+    <script>
+        function rysujSerce(x, y, obrót) {
+            var rysowanie = document.getElementById('obrazek'); 
+            var rodzaj = rysowanie.getContext('2d'); 
+            rodzaj.save();
+            rodzaj.translate(x, y);
+            rodzaj.rotate(obrót * Math.PI / 180);
+            rodzaj.beginPath();
+            rodzaj.moveTo(0, 0);
+            rodzaj.quadraticCurveTo(-20, -15, -40, 0);
+            rodzaj.quadraticCurveTo(-20, 35, 0, 45);
+            rodzaj.quadraticCurveTo(20, 35, 40, 0);
+            rodzaj.quadraticCurveTo(20, -15, 0, 0);
+            rodzaj.closePath();
+            rodzaj.fillStyle = "green";
+            rodzaj.fill();
+            rodzaj.restore();
+        }
+
+        function rysuj() {
+            var canvas = document.getElementById('obrazek');
+            var rodzaj = canvas.getContext('2d');
+            rodzaj.clearRect(0, 0, canvas.width, canvas.height);
+
+            rysujSerce(250, 200, 0);   // Góra
+            rysujSerce(295, 250, 90);  // Prawa
+            rysujSerce(205, 250, -90); // Lewa
+            rysujSerce(250, 300, 180); // Dół
+        }
+
+        rysuj();
+    </script>
+</body>
+</html>

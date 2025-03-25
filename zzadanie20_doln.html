@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zadanie 20</title>
+        <style>
+            canvas {
+                background-color: white;
+            }
+        </style>
+        <script type="text/javascript">
+            function rysuj() {
+                var rysowanie = document.getElementById("obrazek");
+                var rodzaj = rysowanie.getContext("2d");
+                rodzaj.beginPath(); 
+rodzaj.moveTo(200, 300); 
+rodzaj.lineTo(500, 300); 
+rodzaj.lineTo(500, 600); 
+rodzaj.lineTo(200, 600); 
+
+rodzaj.lineTo(200, 300); 
+rodzaj.lineTo(500, 600); 
+
+rodzaj.lineTo(500, 300); 
+rodzaj.lineTo(200, 600); 
+
+rodzaj.closePath(); 
+rodzaj.lineWidth = 20; 
+rodzaj.lineJoin = "round"; 
+rodzaj.stroke(); 
+            }
+        </script>
+    </head>
+    <body onload="rysuj()">
+        <canvas id="obrazek" height="1000" width="1000"> Twoja przeglądarka nie wspiera Canvas! </canvas>
+
+</body>
+</html>

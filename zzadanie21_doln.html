@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z21</title>
+    <style>
+        body { display: flex; gap: 20px; }
+        .gallery, .miniatures { display: flex; flex-direction: column; gap: 10px; }
+        .gallery div { text-align: center; }
+        img { width: 288px; height: 162px; object-fit: cover; }
+        .miniatures canvas { width: 611px; height: 611px; box-shadow: 5px 5px 15px gray; }
+        .transparent img { opacity: 0.5; }
+        .desc1 { font-family: Arial, sans-serif; font-size: 20px; color: blue; }
+        .desc2 { font-family: 'Courier New', monospace; font-size: 18px; color: red; }
+        .desc3 { font-family: 'Comic Sans MS', cursive; font-size: 22px; color: green; }
+        .desc4 { font-family: Verdana, sans-serif; font-size: 24px; color: purple; }
+    </style>
+</head>
+<body>
+    <div class="miniatures">
+        <canvas id="thumb1" width="611" height="611"></canvas>
+        <canvas id="thumb2" width="611" height="611"></canvas>
+        <canvas id="thumb3" width="611" height="611"></canvas>
+        <canvas id="thumb4" width="611" height="611"></canvas>
+    </div>
+    <div class="gallery">
+        <div>
+            <img id="img1" src="image1.jpg" alt="1">
+            <p class="desc1">Kot się obudził...</p>
+        </div>
+        <div class="transparent">
+            <img id="img2" src="image2.jpg" alt="2">
+            <p class="desc2">"Gdzie moje śniadanie?!"</p>
+        </div>
+        <div>
+            <img id="img3" src="image3.jpg" alt="3">
+            <p class="desc3">Kot z przerażeniem odkrywa, że miska jest pusta!</p>
+        </div>
+        <div class="transparent">
+            <img id="img4" src="image4.jpg" alt="4">
+            <p class="desc4">"Muszę porozmawiać z kierownikiem tego domu..."</p>
+        </div>
+    </div>
+    <script>
+        function drawThumbnail(canvasId, imgSrc) {
+            let canvas = document.getElementById(canvasId);
+            let rodzaj = canvas.getContext("2d");
+            let img = new Image();
+            img.src = imgSrc;
+            img.onload = function() {
+                rodzaj.drawImage(img, 0, 0, 611, 611);
+            };
+        }
+        drawThumbnail("thumb1", "image1.jpg");
+        drawThumbnail("thumb2", "image2.jpg");
+        drawThumbnail("thumb3", "image3.jpg");
+        drawThumbnail("thumb4", "image4.jpg");
+    </script>
+</body>
+</html>

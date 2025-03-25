@@ -1,45 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>z102</title>
-</head>
-<body>
+    <script>
+        function setfocus(){
+            document.dwa.txt2.focus(); return;
+        }
 
-    <form name="pesel"> 
-        Wpisz numer PESEL:<br> 
-        <input type="text" name="pesel_kowalski"> 
-        <input type="button" name="button3" value="Test" onClick="test_pesel(this.form)"> 
-        </form> 
-       
-        <input type="text" name="nip_kowalski"> 
-       <script>
-        function test_pesel(form) 
-          { 
-              if (form.txt3.value.length == 11) 
-                { 
-        var l1= parseInt (form. pesel_kowalski.value.substring(0,1)); 
-        var l2=parseInt(form. pesel_kowalski.value.substring(1,2)); 
-        
-         
-        var lk=(1*l1+3*l2+7*l3+………………………); 
-        var ck=………………; 
-        var ckk=…………….; 
-        if (?????????????????????????) 
-        { 
-        alert("PESEL prawidłowy!"); 
-        } 
-        else 
-        { 
-        alert("PESEL nieprawidłowy!"); 
-        } 
-                 } 
-        else 
-                 { 
-        alert("PESEL nieprawidłowy!"); 
-                 } 
-           } 
-        </script>
-</body>
+        function nazwisko(form) {
+        if (form.txt1.value == "")
+            alert("Podaj ciąg znaków!");
+        else if(form.txt1.value.length < 4) {
+            alert("Za krótki ciąg znaków");
+        }
+        else
+            alert("Cześć "+form.txt1.value+" ! Informacja poprawna!");
+        }
+
+        function email(form){
+        if (form.txt2.value == "" || form.txt2.value.indexOf('@', 0) == -1)
+            alert("Niepoprawny adres poczty elektronicznej!");
+        else
+            alert("OK!");
+        }
+
+        function pesel_(form){
+            if(form.pesel_dolny.value.length != 11){
+                alert("Nieprawidłowa wartośc");
+            }
+        }
+        function nip_(form){
+            if(form.nip_dolny.value.length != 11){
+                alert("Nieprawidłowa wartośc");
+            }
+        }
+    </script>
+</head>
+<body onLoad="setfocus()">
+    <form name="jeden">
+        dolny:<br>
+        <input type="text" name="txt1">
+        <input type="button" name="button1" value="Test" onClick="nazwisko(this.form)">
+    </form>
+    <form name="dwa">
+        Wpisz adres swojej poczty elektronicznej:<br>
+        <input type="text" name="txt2">
+        <input type="button" name="button2" value="Test" onClick="email(this.form)">
+    </form>
+    <form name="pesel">
+        Wpisz numer PESEL:<br>
+            <input type="number" name="pesel_dolny">
+            <input type="button" name="button3" value="Test" onClick="pesel_(this.form)">
+        </form>
+    <form name="nip">
+        Wpisz numer NIP:<br>
+            <input type="number" name="nip_dolny">
+            <input type="button" name="button3" value="Test" onClick="nip_(this.form)">
+    </form>
+    <form method=post action="mailto:dowolny@mail.pl">
+        <h3>Czy podoba Ci się ta strona ?</h3>
+        <input name="choice" type="radio" value="1" checked>Tak<BR>
+        <input name="choice" type="radio" value="2">Może być<BR>
+        <input name="choice" type="radio" value="3">Badziewie!<BR>
+        <input name="submit" type="submit" value="Wyślij odpowiedź">
+    </form>
+    </body>
 </html>

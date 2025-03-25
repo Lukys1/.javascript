@@ -2,25 +2,52 @@
 <html lang="pl"> 
 <head> 
     <meta charset="utf-8"> 
-    <title>Canvas</title> 
+    <title>z16</title> 
     <script type="text/javascript"> 
         function rysuj() { 
             var rysowanie = document.getElementById('obrazek'); 
             var rodzaj = rysowanie.getContext('2d'); 
-            rodzaj.fillStyle = 'yellow'; 
-            rodzaj.fillRect(0, 0, 100, 100); 
-            rodzaj.strokeRect(0, 0, 100, 100); 
-            rodzaj.fillStyle = 'red'; 
-            rodzaj.fillRect(30, 30, 30, 30); 
-            rodzaj.beginPath(); 
 
-            rodzaj.beginPath(); 
-rodzaj.arc(200,50,30,Math.PI,0,false); 
+            
+
+
+rodzaj.beginPath(); 
+rodzaj.arc(190,100,30,Math.PI,10,false); 
 rodzaj.closePath(); 
-rodzaj.lineWidth = 10; 
+rodzaj.lineWidth = 4; 
 rodzaj.strokeStyle = "black"; 
 rodzaj.stroke();
 
+rodzaj.beginPath(); 
+rodzaj.arc(120,100,30,Math.PI,10,false); 
+rodzaj.closePath(); 
+rodzaj.lineWidth = 4; 
+rodzaj.strokeStyle = "blue"; 
+rodzaj.stroke();
+
+
+rodzaj.beginPath(); 
+rodzaj.arc(260,100,30,Math.PI,10,false); 
+rodzaj.closePath(); 
+rodzaj.lineWidth = 4; 
+rodzaj.strokeStyle = "red"; 
+rodzaj.stroke();
+
+
+rodzaj.beginPath(); 
+rodzaj.arc(160,140,30,Math.PI,10,false); 
+rodzaj.closePath(); 
+rodzaj.lineWidth = 4; 
+rodzaj.strokeStyle = "yellow"; 
+rodzaj.stroke();
+
+
+rodzaj.beginPath(); 
+rodzaj.arc(220,140,30,Math.PI,10,false); 
+rodzaj.closePath(); 
+rodzaj.lineWidth = 4; 
+rodzaj.strokeStyle = "green"; 
+rodzaj.stroke();
 
         }   
     </script> 

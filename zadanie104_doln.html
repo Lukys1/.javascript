@@ -19,36 +19,50 @@
             margin: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            width: 80%;
+            text-align: center;
+        }
+        .green {
+            background-color: #90ee90;
+            color: green;
+        }
+        .red {
+            background-color: #ff7f7f;
+            color: red;
+        }
     </style>
 </head>
 <body>
- 
     <div class="container">
         <h2>AlkoCAR</h2>
-        Spożyłem: <input type="number" id="piwo"  >ml piwa (np. 500)<br>
-        Spożyłem:<input type="number" id="wino" >ml wina (np. 150)<br>
-        Spożyłem: <input type="number" id="wodka" >ml wódki (np. 50)<br>
- 
+        Spożyłem: <input type="number" id="piwo"> ml piwa (np. 500)<br>
+        Spożyłem: <input type="number" id="wino"> ml wina (np. 150)<br>
+        Spożyłem: <input type="number" id="wodka"> ml wódki (np. 50)<br>
         <label>Ile godzin temu piłeś?</label>
         <input type="number" id="godziny"><br>
-       
- 
         <label>Płeć:</label>
         <input type="radio" name="plec" value="mezczyzna" checked> Mężczyzna
         <input type="radio" name="plec" value="kobieta"> Kobieta <br>
- 
         <label>Waga (kg):</label>
         <input type="number" id="waga"><br>
- 
         <label>Czy piłeś na pusty żołądek?</label>
         <input type="radio" name="zaladek" value="pusty" checked> Pusty
         <input type="radio" name="zaladek" value="sredni"> Średni
         <input type="radio" name="zaladek" value="pelny"> Pełny<br>
- 
-        <button id="oblicz">Oblicz</button>
-        <div id="wynik"></div>
+        <button id="oblicz">Oblicz</button><br>
+        <div id="wynik" class="result"></div>
     </div>
- 
     <script>
         document.getElementById("oblicz").addEventListener("click", function() {
             let piwo = parseInt(document.getElementById("piwo").value) || 0;
@@ -58,33 +72,30 @@
             let plec = document.querySelector('input[name="plec"]:checked').value;
             let waga = parseInt(document.getElementById("waga").value) || 70;
             let zaladek = document.querySelector('input[name="zaladek"]:checked').value;
- 
-            let alkohol = (piwo * 0.05) + (wino * 0.12) + (wodka * 0.40);
-            alkohol *= 0.8;
-
-            if (zaladek==="sredni"){
-                promile*=0.9
-            }
-            else if (zaladek="pelny"){
-                promile*=0.8
-            }
-
- 
+            
+            let alkohol = (piwo * 0.05) + (wino * 0.12) + (wodka * 0.40) * 0.8;
             let wspAbsorpcji = plec === "mezczyzna" ? 0.68 : 0.55;
             let promile = (alkohol / (waga * wspAbsorpcji)) - (godziny * 0.15);
- 
             if (promile < 0) promile = 0;
- 
+            
+            if (zaladek === "sredni") {
+                promile *= 0.9;
+            } else if (zaladek === "pelny") {
+                promile *= 0.8;
+            }
+            
             let wynikDiv = document.getElementById("wynik");
-            wynikDiv.innerHTML = promile.toFixed(2) + "promila";
+            wynikDiv.innerHTML = promile.toFixed(2) + " promila";
+            wynikDiv.classList.remove("green", "red");
+            
             if (promile <= 0.2) {
-                wynikDiv.innerHTML += " MOŻESZ JECHAĆ!";
+                wynikDiv.innerHTML += "<br>MOŻESZ JECHAĆ!";
+                wynikDiv.classList.add("green");
             } else {
-                wynikDiv.innerHTML += " NIE MOŻESZ JECHAĆ!";
+                wynikDiv.innerHTML += "<br>NIE MOŻESZ JECHAĆ!";
+                wynikDiv.classList.add("red");
             }
         });
     </script>
- 
 </body>
 </html>
- 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Kulturyści</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 600px; margin: auto; }
+        .gallery img { width: 100%; cursor: pointer; }
+        .full-image { display: none; text-align: center; }
+        .full-image img { width: 80%; }
+        .back-button { margin-top: 10px; display: block; }
+    </style>
+</head>
+<body>
+    <h1>Galeria - Kulturyści (nr 6)</h1>
+    <div class="gallery">
+        <img src="kulturysta1_miniatura.png" alt="Kulturysta 1" onclick="showImage('kulturysta1.jpg')">
+        <img src="kulturysta2_miniatura.png" alt="Kulturysta 2" onclick="showImage('kulturysta2.jpg')">
+        <img src="kulturysta3_miniatura.png" alt="Kulturysta 3" onclick="showImage('kulturysta3.jpg')">
+        <img src="kulturysta4_miniatura.png" alt="Kulturysta 4" onclick="showImage('kulturysta4.jpg')">
+        <img src="kulturysta5_miniatura.png" alt="Kulturysta 5" onclick="showImage('kulturysta5.jpg')">
+        <img src="kulturysta6_miniatura.png" alt="Kulturysta 6" onclick="showImage('kulturysta6.jpg')">
+    </div>
+    
+    <div class="full-image" id="fullImageContainer">
+        <img id="fullImage" src="" alt="Pełne zdjęcie">
+        <button class="back-button" onclick="goBack()">Wróć do miniatur</button>
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('fullImage').src = src;
+            document.querySelector('.gallery').style.display = 'none';
+            document.getElementById('fullImageContainer').style.display = 'block';
+        }
+        
+        function goBack() {
+            document.querySelector('.gallery').style.display = 'grid';
+            document.getElementById('fullImageContainer').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

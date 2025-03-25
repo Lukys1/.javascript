@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Teksty</title>
+</head>
+<body>
+ 
+    <script>
+        function rysuj(){
+
+            var rysowanie = document.getElementById('obrazek'); 
+            var rodzaj = rysowanie.getContext('2d'); 
+
+        rodzaj.font = "80px Arial";
+        rodzaj.strokeStyle = "brown";
+        rodzaj.strokeText("ZSE", 200, 80);
+        
+ 
+     
+        rodzaj.fillStyle = "blue";
+        rodzaj.beginPath();
+        rodzaj.moveTo(180, 100);
+        rodzaj.lineTo(320, 100);
+        rodzaj.lineTo(370, 280);
+        rodzaj.lineTo(220, 280);
+        rodzaj.closePath();
+        rodzaj.fill();
+ 
+       
+        rodzaj.font = "40px serif";
+        rodzaj.fillStyle = "black";
+        rodzaj.fillText("Technik", 65, 200);
+        rodzaj.fillText("etyczne", 340, 200);
+
+        rodzaj.font = "40px serif";
+        rodzaj.fillStyle = "white";
+        rodzaj.fillText("um", 195, 200);
+        rodzaj.fillText("Energ", 250, 200);
+ 
+        
+        rodzaj.font = "45px serif";
+        rodzaj.fillStyle = "green";
+        rodzaj.fillText("Gdańsk", 160, 350);
+ 
+        rodzaj.font = "40px Arial";
+        rodzaj.strokeStyle = "navy";
+        rodzaj.strokeText("Reja 25", 340, 380);
+
+
+        }
+       
+ 
+    
+        
+    </script>
+   
+</head> 
+<body onload="rysuj();"> 
+<canvas id="obrazek" width="600" height="800"> 
+Twoja przeglądarka nie wspiera Canvas! Zainstaluj Internet Explorer 9.x 
+</canvas> 
+</body> 
+</html> 
